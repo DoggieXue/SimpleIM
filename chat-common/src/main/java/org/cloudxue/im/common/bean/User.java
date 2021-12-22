@@ -2,6 +2,7 @@ package org.cloudxue.im.common.bean;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.cloudxue.im.common.bean.msg.ProtoMsg;
 
 import java.util.Arrays;
 import java.util.UUID;
@@ -53,7 +54,7 @@ public class User {
     public static User fromMsg(ProtoMsg.LoginRequest info) {
         User user = new User();
         user.uid = new String(info.getUid());
-        user.deviceId = new String(info.getDevicdId());
+        user.deviceId = new String(info.getDeviceId());
         user.token = new String(info.getToken());
         user.setPlatform(info.getPlatform());
         log.info("登录中：{}", user.toString());

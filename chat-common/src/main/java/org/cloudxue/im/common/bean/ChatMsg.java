@@ -2,6 +2,7 @@ package org.cloudxue.im.common.bean;
 
 import lombok.Data;
 import org.apache.commons.lang.StringUtils;
+import org.cloudxue.im.common.bean.msg.ProtoMsg;
 
 /**
  * @ClassName ChatMsg
