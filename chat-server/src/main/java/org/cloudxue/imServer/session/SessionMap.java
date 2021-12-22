@@ -2,7 +2,7 @@ package org.cloudxue.imServer.session;
 
 import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.bean.User;
-import org.cloudxue.im.util.Logger;
+import org.cloudxue.util.Logger;
 
 import java.util.Iterator;
 import java.util.List;
