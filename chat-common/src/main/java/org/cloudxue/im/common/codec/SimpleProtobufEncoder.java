@@ -6,7 +6,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.ProtoInstant;
 import org.cloudxue.im.common.bean.msg.ProtoMsg;
-import org.cloudxue.im.util.Logger;
+import org.cloudxue.util.Logger;
 
 /**
  * @ClassName SimpleProtobufEncoder

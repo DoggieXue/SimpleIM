@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.ProtoInstant;
 import org.cloudxue.im.common.bean.msg.ProtoMsg;
 import org.cloudxue.im.common.exception.InvalidFrameException;
-import org.cloudxue.im.util.Logger;
+import org.cloudxue.util.Logger;
 
 import java.util.List;
 
