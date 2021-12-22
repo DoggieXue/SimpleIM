@@ -1,4 +1,4 @@
-package org.cloudxue.im.util;
+package org.cloudxue.util;
 
 /**
  * @ClassName Logger
