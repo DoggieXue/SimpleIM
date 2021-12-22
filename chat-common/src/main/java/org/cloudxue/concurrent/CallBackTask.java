@@ -1,4 +1,14 @@
 package org.cloudxue.concurrent;
 
-public interface CallBackTask {
+/**
+ * 异步任务执行
+ * @param <R>
+ */
+public interface CallBackTask<R> {
+
+    R extcute() throws Exception;
+
+    void onBack(R r);
+
+    void onException(Throwable t);
 }
