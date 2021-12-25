@@ -21,8 +21,8 @@ message LoginRequest {
     required string uid = 1;      //用户唯一ID
     required string deviceId = 2; //当前设备ID
     required string token = 3;   //用户token
-    required uint32 platform = 4; //客户端平台 windows、Mac、Android、ios、web
-    required string app_version = 5; //APP版本号
+    optional uint32 platform = 4; //客户端平台 windows、Mac、Android、ios、web
+    optional string app_version = 5; //APP版本号
 }
 /*登录响应*/
 message LoginResponse {

@@ -321,7 +321,7 @@ public final class ProtoMsg {
      *客户端平台 windows、Mac、Android、ios、web
      * </pre>
      *
-     * <code>required uint32 platform = 4;</code>
+     * <code>optional uint32 platform = 4;</code>
      * @return Whether the platform field is set.
      */
     boolean hasPlatform();
@@ -330,7 +330,7 @@ public final class ProtoMsg {
      *客户端平台 windows、Mac、Android、ios、web
      * </pre>
      *
-     * <code>required uint32 platform = 4;</code>
+     * <code>optional uint32 platform = 4;</code>
      * @return The platform.
      */
     int getPlatform();
@@ -340,7 +340,7 @@ public final class ProtoMsg {
      *APP版本号
      * </pre>
      *
-     * <code>required string app_version = 5;</code>
+     * <code>optional string app_version = 5;</code>
      * @return Whether the appVersion field is set.
      */
     boolean hasAppVersion();
@@ -349,7 +349,7 @@ public final class ProtoMsg {
      *APP版本号
      * </pre>
      *
-     * <code>required string app_version = 5;</code>
+     * <code>optional string app_version = 5;</code>
      * @return The appVersion.
      */
     java.lang.String getAppVersion();
@@ -358,7 +358,7 @@ public final class ProtoMsg {
      *APP版本号
      * </pre>
      *
-     * <code>required string app_version = 5;</code>
+     * <code>optional string app_version = 5;</code>
      * @return The bytes for appVersion.
      */
     com.google.protobuf.ByteString
@@ -667,7 +667,7 @@ public final class ProtoMsg {
      *客户端平台 windows、Mac、Android、ios、web
      * </pre>
      *
-     * <code>required uint32 platform = 4;</code>
+     * <code>optional uint32 platform = 4;</code>
      * @return Whether the platform field is set.
      */
     @java.lang.Override
@@ -679,7 +679,7 @@ public final class ProtoMsg {
      *客户端平台 windows、Mac、Android、ios、web
      * </pre>
      *
-     * <code>required uint32 platform = 4;</code>
+     * <code>optional uint32 platform = 4;</code>
      * @return The platform.
      */
     @java.lang.Override
@@ -694,7 +694,7 @@ public final class ProtoMsg {
      *APP版本号
      * </pre>
      *
-     * <code>required string app_version = 5;</code>
+     * <code>optional string app_version = 5;</code>
      * @return Whether the appVersion field is set.
      */
     @java.lang.Override
@@ -706,7 +706,7 @@ public final class ProtoMsg {
      *APP版本号
      * </pre>
      *
-     * <code>required string app_version = 5;</code>
+     * <code>optional string app_version = 5;</code>
      * @return The appVersion.
      */
     @java.lang.Override
@@ -729,7 +729,7 @@ public final class ProtoMsg {
      *APP版本号
      * </pre>
      *
-     * <code>required string app_version = 5;</code>
+     * <code>optional string app_version = 5;</code>
      * @return The bytes for appVersion.
      */
     @java.lang.Override
@@ -763,14 +763,6 @@ public final class ProtoMsg {
         return false;
       }
       if (!hasToken()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPlatform()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAppVersion()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1175,12 +1167,6 @@ public final class ProtoMsg {
         if (!hasToken()) {
           return false;
         }
-        if (!hasPlatform()) {
-          return false;
-        }
-        if (!hasAppVersion()) {
-          return false;
-        }
         return true;
       }
 
@@ -1534,7 +1520,7 @@ public final class ProtoMsg {
        *客户端平台 windows、Mac、Android、ios、web
        * </pre>
        *
-       * <code>required uint32 platform = 4;</code>
+       * <code>optional uint32 platform = 4;</code>
        * @return Whether the platform field is set.
        */
       @java.lang.Override
@@ -1546,7 +1532,7 @@ public final class ProtoMsg {
        *客户端平台 windows、Mac、Android、ios、web
        * </pre>
        *
-       * <code>required uint32 platform = 4;</code>
+       * <code>optional uint32 platform = 4;</code>
        * @return The platform.
        */
       @java.lang.Override
@@ -1558,7 +1544,7 @@ public final class ProtoMsg {
        *客户端平台 windows、Mac、Android、ios、web
        * </pre>
        *
-       * <code>required uint32 platform = 4;</code>
+       * <code>optional uint32 platform = 4;</code>
        * @param value The platform to set.
        * @return This builder for chaining.
        */
@@ -1573,7 +1559,7 @@ public final class ProtoMsg {
        *客户端平台 windows、Mac、Android、ios、web
        * </pre>
        *
-       * <code>required uint32 platform = 4;</code>
+       * <code>optional uint32 platform = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlatform() {
@@ -1589,7 +1575,7 @@ public final class ProtoMsg {
        *APP版本号
        * </pre>
        *
-       * <code>required string app_version = 5;</code>
+       * <code>optional string app_version = 5;</code>
        * @return Whether the appVersion field is set.
        */
       public boolean hasAppVersion() {
@@ -1600,7 +1586,7 @@ public final class ProtoMsg {
        *APP版本号
        * </pre>
        *
-       * <code>required string app_version = 5;</code>
+       * <code>optional string app_version = 5;</code>
        * @return The appVersion.
        */
       public java.lang.String getAppVersion() {
@@ -1622,7 +1608,7 @@ public final class ProtoMsg {
        *APP版本号
        * </pre>
        *
-       * <code>required string app_version = 5;</code>
+       * <code>optional string app_version = 5;</code>
        * @return The bytes for appVersion.
        */
       public com.google.protobuf.ByteString
@@ -1643,7 +1629,7 @@ public final class ProtoMsg {
        *APP版本号
        * </pre>
        *
-       * <code>required string app_version = 5;</code>
+       * <code>optional string app_version = 5;</code>
        * @param value The appVersion to set.
        * @return This builder for chaining.
        */
@@ -1662,7 +1648,7 @@ public final class ProtoMsg {
        *APP版本号
        * </pre>
        *
-       * <code>required string app_version = 5;</code>
+       * <code>optional string app_version = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAppVersion() {
@@ -1676,7 +1662,7 @@ public final class ProtoMsg {
        *APP版本号
        * </pre>
        *
-       * <code>required string app_version = 5;</code>
+       * <code>optional string app_version = 5;</code>
        * @param value The bytes for appVersion to set.
        * @return This builder for chaining.
        */
@@ -9096,7 +9082,7 @@ public final class ProtoMsg {
     java.lang.String[] descriptorData = {
       "\n\rMessage.proto\"c\n\014LoginRequest\022\013\n\003uid\030\001" +
       " \002(\t\022\020\n\010deviceId\030\002 \002(\t\022\r\n\005token\030\003 \002(\t\022\020\n" +
-      "\010platform\030\004 \002(\r\022\023\n\013app_version\030\005 \002(\t\"K\n\r" +
+      "\010platform\030\004 \001(\r\022\023\n\013app_version\030\005 \001(\t\"K\n\r" +
       "LoginResponse\022\016\n\006result\030\001 \002(\010\022\014\n\004code\030\002 " +
       "\002(\r\022\014\n\004info\030\003 \002(\t\022\016\n\006expose\030\004 \002(\r\"\253\001\n\016Me" +
       "ssageRequest\022\016\n\006msg_id\030\001 \002(\004\022\014\n\004from\030\002 \002" +
