@@ -48,7 +48,10 @@ public class ClientCommandMenu implements BaseCommand{
         menus.append("[menu] ");
         while (iterator.hasNext()) {
             BaseCommand next = iterator.next().getValue();
-            menus.append("->").append(next.getTips()).append(" | ");
+            menus.append(next.getKey())
+                    .append("->")
+                    .append(next.getTips())
+                    .append(" | ");
         }
         allCommandsShow = menus.toString();
     }

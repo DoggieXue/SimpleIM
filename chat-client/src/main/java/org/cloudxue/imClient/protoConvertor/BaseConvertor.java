@@ -10,13 +10,13 @@ import org.cloudxue.imClient.session.ClientSession;
  * @Date 2021/12/24 上午10:23
  * @Version 1.0
  **/
-public class BaseConventor {
+public class BaseConvertor {
     protected ProtoMsg.HeadType type;
-    
+
     private long seqId;
     private ClientSession session;
 
-    public BaseConventor(ProtoMsg.HeadType type, ClientSession session) {
+    public BaseConvertor(ProtoMsg.HeadType type, ClientSession session) {
         this.type = type;
         this.session = session;
     }
