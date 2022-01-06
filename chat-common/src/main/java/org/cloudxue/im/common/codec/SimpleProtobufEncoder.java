@@ -22,16 +22,17 @@ public class SimpleProtobufEncoder extends MessageToByteEncoder<ProtoMsg .Messag
     protected void encode(ChannelHandlerContext ctx, ProtoMsg.Message msg, ByteBuf out) throws Exception {
         out.writeShort(ProtoInstant.MAGIC_CODE);
         out.writeShort(ProtoInstant.VERSION_CODE);
+
         //将ProtoMsg.Message对象转换为byte
         byte[] bytes = msg.toByteArray();
 
-        //加密消息体
+        //TODO： 加密消息体
 
         int length = bytes.length;
-        Logger.cfo("encoder length = " + length);
+        log.info("encoder length = " + length);
+
         //先将消息长度（消息头）写入
         out.writeInt(length);
-
         //再将消息体中包含的要发送的数据写入
         out.writeBytes(bytes);
     }

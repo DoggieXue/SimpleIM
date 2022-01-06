@@ -2,7 +2,6 @@ package org.cloudxue.imServer.session;
 
 import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.bean.User;
-import org.cloudxue.util.Logger;
 
 import java.util.Iterator;
 import java.util.List;
@@ -37,7 +36,7 @@ public class SessionMap {
      */
     public void addSession(ServerSession s) {
         map.put(s.getSessionId(), s);
-        log.info("用户登录： id = " + s.getUser().getUid() + "   在线总数： " + map.size());
+        log.info("用户登录： id = 【" + s.getUser().getUid() + "】，在线总数： " + map.size());
     }
 
     /**
@@ -76,7 +75,7 @@ public class SessionMap {
         }
         ServerSession serverSession = map.get(sessionId);
         map.remove(sessionId);
-        Logger.tcfo("用户下线： id = " + serverSession.getUser().getUid() + "在线总数： " + map.size());
+        log.info("用户下线： id = " + serverSession.getUser().getUid() + "在线总数： " + map.size());
     }
 
     /**

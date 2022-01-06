@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 
 /**
  * @ClassName LoginRequestHandler
- * @Description 请描述类的业务用途
+ * @Description 服务端登录处理器
+ *              1、登录消息校验：非空校验、消息类型校验
+ *              2、创建Session
+ *              3、提交登录业务异步处理任务
  * @Author xuexiao
  * @Date 2021/12/22 下午2:31
  * @Version 1.0
@@ -34,6 +37,7 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        // 1、登录消息校验
         if (null == msg || !(msg instanceof ProtoMsg.Message)) {
             super.channelRead(ctx, msg);
             return;
@@ -47,20 +51,22 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
             return;
         }
 
+        //2、创建客户端Session
         ServerSession session = new ServerSession(ctx.channel());
 
-        //异步任务
+        //3、异步完成登录逻辑的处理
         CallbackTaskScheduler.add(new CallBackTask<Boolean>() {
 
             @Override
-            public Boolean extcute() throws Exception {
+            public Boolean execute() throws Exception {
                 boolean r = loginProcessor.action(session, pkg);
                 return r;
             }
-
+            //异步任务执行成功后返回
             @Override
             public void onBack(Boolean r) {
                 if (r) {
+                    //TODO: 添加聊天处理器和心跳处理器
 
                     ctx.pipeline().remove("login");
                     log.info("登录成功： " + session.getUser());
@@ -69,11 +75,12 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
                     log.info("登录失败： " + session.getUser());
                 }
             }
-
+            //异步任务执行异常
             @Override
             public void onException(Throwable t) {
+                t.printStackTrace();
                 ServerSession.closeSession(ctx);
-                log.info("登录失败： " + session.getUser());
+                log.info("登录异常： " + session.getUser());
             }
         });
 

@@ -81,7 +81,7 @@ public class ServerSession {
      * @return
      */
     public ServerSession reverseBind() {
-        log.info(" ServerSession 绑定会话 " + channel.remoteAddress());
+        log.info("ServerSession 绑定会话 " + channel.remoteAddress());
         channel.attr(ServerSession.SESSION_KEY).set(this);
         SessionMap.inst().addSession(this);
         isLogin = true;
@@ -112,7 +112,7 @@ public class ServerSession {
         if (channel.isWritable()) { //低水位
             channel.writeAndFlush(pkg);
         } else {    //高水位
-            log.debug("通道很忙， 消息呗暂存了");
+            log.debug("通道很忙， 消息被暂存了");
             //TODO
             //写入消息暂存的分布式存储，如mongo
 

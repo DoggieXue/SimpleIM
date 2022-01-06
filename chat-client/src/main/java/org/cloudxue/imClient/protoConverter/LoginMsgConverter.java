@@ -1,20 +1,20 @@
-package org.cloudxue.imClient.protoConvertor;
+package org.cloudxue.imClient.protoConverter;
 
 import org.cloudxue.im.common.bean.User;
 import org.cloudxue.im.common.bean.msg.ProtoMsg;
 import org.cloudxue.imClient.session.ClientSession;
 
 /**
- * @ClassName LoginMsgConvertor
- * @Description 登录消息 Convertor
+ * @ClassName LoginMsgConverter
+ * @Description 消息构造器：登录消息Bean对象转换完protobuf数据包
  * @Author xuexiao
  * @Date 2021/12/24 上午10:20
  * @Version 1.0
  **/
-public class LoginMsgConvertor extends BaseConvertor {
+public class LoginMsgConverter extends BaseConverter {
     private final User user;
 
-    public LoginMsgConvertor(User user, ClientSession session) {
+    public LoginMsgConverter(User user, ClientSession session) {
         super(ProtoMsg.HeadType.LOGIN_REQUEST, session);
         this.user = user;
     }
@@ -33,7 +33,7 @@ public class LoginMsgConvertor extends BaseConvertor {
     }
 
     public static ProtoMsg.Message build (User user, ClientSession session) {
-        LoginMsgConvertor convertor = new LoginMsgConvertor(user, session);
+        LoginMsgConverter convertor = new LoginMsgConverter(user, session);
         return convertor.build();
     }
 }

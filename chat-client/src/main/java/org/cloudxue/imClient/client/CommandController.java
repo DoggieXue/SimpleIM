@@ -66,6 +66,9 @@ public class CommandController {
     private boolean connectFlag = false;
     private User user;
 
+    /**
+     * 客户端与服务端断开监听器
+     */
     GenericFutureListener<ChannelFuture> closeListener = (ChannelFuture f) -> {
         log.info(new Date() + ":  连接已经断开...");
         channel = f.channel();
@@ -77,6 +80,9 @@ public class CommandController {
         notifyCommandThread();
     };
 
+    /**
+     * 客户端连接服务端监听器
+     */
     GenericFutureListener<ChannelFuture> connectedListener = (ChannelFuture f) -> {
         final EventLoop eventLoop = f.channel().eventLoop();
 
@@ -87,12 +93,13 @@ public class CommandController {
             connectFlag = false;
         } else {
             connectFlag = true;
-            log.info("Simple IM 服务器 连接成功");
-            channel = f.channel();
+            log.info("SimpleIM 服务器 连接成功");
 
+            channel = f.channel();
             //创建客户端会话
             session = new ClientSession(channel);
             session.setConnected(true);
+
             channel.closeFuture().addListener(closeListener);
 
             //唤醒用户线程
@@ -140,7 +147,7 @@ public class CommandController {
         while (true) {
             //建立连接
             while (connectFlag == false) {
-                //开始连接
+                //开始连接: 1）设置连接监听器、2）执行连接操作、3）连接成功创建客户端session、4）设置连接关闭监听器
                 startConnectServer();
 
                 waitCommandThread();
@@ -152,7 +159,7 @@ public class CommandController {
                 String key = clientCommandMenu.getCommandInput();
                 BaseCommand command = commandMap.get(key);
                 if (null == command) {
-                    System.out.println("无法识别【" + command + "】指令，请重新输入！");
+                    System.out.println("无法识别【" + key + "】指令，请重新输入！");
                     continue;
                 }
 
@@ -186,8 +193,10 @@ public class CommandController {
         this.user = user;
 
         session.setUser(user);
+
         loginSender.setUser(user);
         loginSender.setSession(session);
+        //发送登录信息
         loginSender.sendLoginMsg();
     }
 

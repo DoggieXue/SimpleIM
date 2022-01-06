@@ -62,10 +62,8 @@ public class ChatServer {
                 protected void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline().addLast(new SimpleProtobufDecoder());
                     ch.pipeline().addLast(new SimpleProtobufEncoder());
-                    //添加心跳处理器
-
                     //添加登录处理器,此处理器登录后删除
-                    ch.pipeline().addLast(loginRequestHandler);
+                    ch.pipeline().addLast("login",  loginRequestHandler);
                     //添加异常处理器
                     ch.pipeline().addLast(serverExceptionHandler);
                 }

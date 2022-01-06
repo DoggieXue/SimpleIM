@@ -2,7 +2,7 @@ package org.cloudxue.imClient.sender;
 
 import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.bean.msg.ProtoMsg;
-import org.cloudxue.imClient.protoConvertor.LoginMsgConvertor;
+import org.cloudxue.imClient.protoConverter.LoginMsgConverter;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,7 +24,7 @@ public class LoginSender extends BaseSender{
 
         log.info("开始构造登录消息");
 
-        ProtoMsg.Message message = LoginMsgConvertor.build(getUser(), getSession());
+        ProtoMsg.Message message = LoginMsgConverter.build(getUser(), getSession());
 
         log.info("发送登录消息");
         super.sendMsg(message);

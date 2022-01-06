@@ -10,8 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.bean.User;
 import org.cloudxue.im.common.bean.msg.ProtoMsg;
 
-import java.util.UUID;
-
 
 /**
  * @ClassName ClientSession
@@ -42,7 +40,7 @@ public class ClientSession {
     public ClientSession(Channel channel) {
         //正向绑定
         this.channel = channel;
-        this.sessionId = UUID.randomUUID().toString();
+        this.sessionId = String.valueOf(-1);
         //反向绑定
         channel.attr(SESSION_LEY).set(this);
     }

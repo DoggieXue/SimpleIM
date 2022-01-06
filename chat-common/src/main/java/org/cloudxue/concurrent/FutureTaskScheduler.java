@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @ClassName FutureTaskScheduler
- * @Description 请描述类的业务用途
+ * @Description 辅助类：提交执行没有回调的任务
  * @Author xuexiao
  * @Date 2021/12/24 下午4:55
  * @Version 1.0

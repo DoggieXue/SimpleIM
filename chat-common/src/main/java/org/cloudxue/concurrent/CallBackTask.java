@@ -6,7 +6,7 @@ package org.cloudxue.concurrent;
  */
 public interface CallBackTask<R> {
 
-    R extcute() throws Exception;
+    R execute() throws Exception;
 
     void onBack(R r);
 

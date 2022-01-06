@@ -62,8 +62,7 @@ public class SimpleProtobufDecoder extends ByteToMessageDecoder
             in.resetReaderIndex();
             return null;
         }
-        Logger.cfo("decoder length = " + in.readableBytes());
-
+        log.info("decoder length = " + in.readableBytes());
         byte[] array;
         if (in.hasArray()) {
             //堆缓存

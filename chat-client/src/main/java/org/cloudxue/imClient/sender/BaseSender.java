@@ -13,7 +13,7 @@ import org.cloudxue.imClient.session.ClientSession;
 
 /**
  * @ClassName BaseSender
- * @Description 请描述类的业务用途
+ * @Description 消息发送器
  * @Author xuexiao
  * @Date 2021/12/23 下午9:59
  * @Version 1.0
@@ -52,7 +52,7 @@ public abstract class BaseSender {
             public void operationComplete(Future<? super Void> future) throws Exception {
                 //消息发送完成后的回调
                 if (future.isSuccess()) {
-                    sendSuccessed(message);
+                    sendSuccess(message);
                 } else {
                     sendFailed(message);
                 }
@@ -60,7 +60,7 @@ public abstract class BaseSender {
         });
     }
 
-    protected void sendSuccessed(ProtoMsg.Message message) {
+    protected void sendSuccess(ProtoMsg.Message message) {
         log.info("发送成功");
 
     }
