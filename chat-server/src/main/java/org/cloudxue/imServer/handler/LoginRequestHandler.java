@@ -28,6 +28,8 @@ import org.springframework.stereotype.Service;
 public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
     @Autowired
     LoginProcessor loginProcessor;
+    @Autowired
+    ChatRedirectHandler chatRedirectHandler;
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -54,7 +56,7 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
         //2、创建客户端Session
         ServerSession session = new ServerSession(ctx.channel());
 
-        //3、异步完成登录逻辑的处理
+        //3、使用独立的、异步的业务线程 来处理登录时的校验逻辑
         CallbackTaskScheduler.add(new CallBackTask<Boolean>() {
 
             @Override
@@ -67,6 +69,7 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
             public void onBack(Boolean r) {
                 if (r) {
                     //TODO: 添加聊天处理器和心跳处理器
+                    ctx.pipeline().addAfter("login", "chat", chatRedirectHandler);
 
                     ctx.pipeline().remove("login");
                     log.info("登录成功： " + session.getUser());

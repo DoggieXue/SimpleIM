@@ -13,6 +13,7 @@ import org.cloudxue.im.common.bean.User;
 import org.cloudxue.im.common.codec.SimpleProtobufDecoder;
 import org.cloudxue.im.common.codec.SimpleProtobufEncoder;
 import org.cloudxue.imClient.config.SystemConfig;
+import org.cloudxue.imClient.handler.ChatMsgHandler;
 import org.cloudxue.imClient.handler.ExceptionHandler;
 import org.cloudxue.imClient.handler.LoginResponseHandler;
 import org.cloudxue.imClient.sender.LoginSender;
@@ -42,6 +43,8 @@ public class ChatNettyClient {
     private LoginResponseHandler loginResponseHandler;
     @Autowired
     private ExceptionHandler exceptionHandler;
+    @Autowired
+    private ChatMsgHandler chatMsgHandler;
 
     private Channel channel;
     private LoginSender loginSender;
@@ -72,6 +75,7 @@ public class ChatNettyClient {
                     ch.pipeline().addLast("decoder", new SimpleProtobufDecoder());
                     ch.pipeline().addLast("encoder", new SimpleProtobufEncoder());
                     ch.pipeline().addLast(loginResponseHandler);
+                    ch.pipeline().addLast(chatMsgHandler);
                     ch.pipeline().addLast(exceptionHandler);
                 }
             });

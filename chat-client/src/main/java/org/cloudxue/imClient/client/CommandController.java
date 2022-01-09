@@ -8,10 +8,8 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.concurrent.FutureTaskScheduler;
 import org.cloudxue.im.common.bean.User;
-import org.cloudxue.imClient.command.BaseCommand;
-import org.cloudxue.imClient.command.ClientCommandMenu;
-import org.cloudxue.imClient.command.LoginConsoleCommand;
-import org.cloudxue.imClient.command.LogoutConsoleCommand;
+import org.cloudxue.imClient.command.*;
+import org.cloudxue.imClient.sender.ChatSender;
 import org.cloudxue.imClient.sender.LoginSender;
 import org.cloudxue.imClient.session.ClientSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +48,9 @@ public class CommandController {
     @Autowired
     LogoutConsoleCommand logoutConsoleCommand;
 
+    @Autowired
+    ChatConsoleCommand chatConsoleCommand;
+
     private Map<String, BaseCommand> commandMap;
 
     private String menuString;
@@ -62,6 +63,8 @@ public class CommandController {
 
     @Autowired
     private LoginSender loginSender;
+    @Autowired
+    private ChatSender chatSender;
 
     private boolean connectFlag = false;
     private User user;
@@ -111,6 +114,7 @@ public class CommandController {
         commandMap = new HashMap<>();
         commandMap.put(clientCommandMenu.getKey(), clientCommandMenu);
         commandMap.put(loginConsoleCommand.getKey(), loginConsoleCommand);
+        commandMap.put(chatConsoleCommand.getKey(), chatConsoleCommand);
         commandMap.put(logoutConsoleCommand.getKey(), logoutConsoleCommand);
 
         clientCommandMenu.setAllCommand(commandMap);
@@ -172,6 +176,10 @@ public class CommandController {
                         command.exec(scanner);
                         startLogout((LogoutConsoleCommand) command);
                         break;
+                    case ChatConsoleCommand.KEY:
+                        command.exec(scanner);
+                        startOneChat((ChatConsoleCommand) command);
+                        break;
                 }
             }
         }
@@ -200,12 +208,32 @@ public class CommandController {
         loginSender.sendLoginMsg();
     }
 
+    /**
+     * 退出
+     * @param command
+     */
     private void startLogout(LogoutConsoleCommand command) {
         if (!isLogin()) {
             log.info("还没有登录，请先登录");
             return;
         }
         //TODO:登出逻辑
+    }
+
+    /**
+     * 发送单体消息
+     * @param command
+     */
+    private void startOneChat (ChatConsoleCommand command) {
+        if (!isLogin()) {
+            log.info("还没有登录，请先登录");
+            return;
+        }
+
+        chatSender.setSession(session);
+        chatSender.setUser(user);
+
+        chatSender.sendChatMsg(command.getToUserId(), command.getMessage());
     }
 
     public boolean isLogin() {

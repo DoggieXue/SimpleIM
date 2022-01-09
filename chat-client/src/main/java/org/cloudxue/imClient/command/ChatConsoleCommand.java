@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @ClassName ChatConsoleCommand
- * @Description 请描述类的业务用途
+ * @Description 收集聊天内容
  * @Author xuexiao
  * @Date 2021/12/23 下午9:44
  * @Version 1.0
