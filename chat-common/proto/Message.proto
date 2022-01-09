@@ -40,10 +40,10 @@ message MessageRequest {
     required uint64 time = 4;
     required uint32 msg_type = 5;
     required string content = 6;
-    required string url = 7;
-    required string property = 8;
-    required string from_nick = 9;
-    required string json = 10;
+    optional string url = 7;
+    optional string property = 8;
+    optional string from_nick = 9;
+    optional string json = 10;
 }
 /*聊天响应*/
 message MessageResponse {
