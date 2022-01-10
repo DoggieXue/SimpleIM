@@ -61,12 +61,12 @@ message MessageNotification {
     required string json = 3;
     required string timestamp = 4;
 }
-///*心跳*/
-//message MessageHeartBeat {
-//    uint32 seq = 1;
-//    string uid = 2;
-//    string json = 3;
-//}
+/*心跳*/
+message MessageHeartBeat {
+    required uint32 seq = 1;
+    required string uid = 2;
+    required string json = 3;
+}
 /*顶层消息*/
 //顶层消息是一中嵌套消息，嵌套了各种类型的消息
 //逻辑上：根据消息类型，type的值最多只要一个有效
@@ -78,5 +78,6 @@ message Message {
     optional LoginResponse loginResponse = 5;
     optional MessageRequest messageRequest = 6;
     optional MessageResponse messageResponse = 7;
-    optional MessageNotification notification = 8;
+    optional MessageNotification notification = 8; //系统通知
+    optional MessageHeartBeat heartBeat = 9; //心跳
 }

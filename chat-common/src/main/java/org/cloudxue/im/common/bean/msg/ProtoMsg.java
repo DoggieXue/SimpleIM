@@ -7071,6 +7071,922 @@ public final class ProtoMsg {
 
   }
 
+  public interface MessageHeartBeatOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:MessageHeartBeat)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required uint32 seq = 1;</code>
+     * @return Whether the seq field is set.
+     */
+    boolean hasSeq();
+    /**
+     * <code>required uint32 seq = 1;</code>
+     * @return The seq.
+     */
+    int getSeq();
+
+    /**
+     * <code>required string uid = 2;</code>
+     * @return Whether the uid field is set.
+     */
+    boolean hasUid();
+    /**
+     * <code>required string uid = 2;</code>
+     * @return The uid.
+     */
+    java.lang.String getUid();
+    /**
+     * <code>required string uid = 2;</code>
+     * @return The bytes for uid.
+     */
+    com.google.protobuf.ByteString
+        getUidBytes();
+
+    /**
+     * <code>required string json = 3;</code>
+     * @return Whether the json field is set.
+     */
+    boolean hasJson();
+    /**
+     * <code>required string json = 3;</code>
+     * @return The json.
+     */
+    java.lang.String getJson();
+    /**
+     * <code>required string json = 3;</code>
+     * @return The bytes for json.
+     */
+    com.google.protobuf.ByteString
+        getJsonBytes();
+  }
+  /**
+   * <pre>
+   *心跳
+   * </pre>
+   *
+   * Protobuf type {@code MessageHeartBeat}
+   */
+  public static final class MessageHeartBeat extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:MessageHeartBeat)
+      MessageHeartBeatOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MessageHeartBeat.newBuilder() to construct.
+    private MessageHeartBeat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MessageHeartBeat() {
+      uid_ = "";
+      json_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MessageHeartBeat();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MessageHeartBeat(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              seq_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              uid_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              json_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.cloudxue.im.common.bean.msg.ProtoMsg.internal_static_MessageHeartBeat_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.cloudxue.im.common.bean.msg.ProtoMsg.internal_static_MessageHeartBeat_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.class, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SEQ_FIELD_NUMBER = 1;
+    private int seq_;
+    /**
+     * <code>required uint32 seq = 1;</code>
+     * @return Whether the seq field is set.
+     */
+    @java.lang.Override
+    public boolean hasSeq() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>required uint32 seq = 1;</code>
+     * @return The seq.
+     */
+    @java.lang.Override
+    public int getSeq() {
+      return seq_;
+    }
+
+    public static final int UID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object uid_;
+    /**
+     * <code>required string uid = 2;</code>
+     * @return Whether the uid field is set.
+     */
+    @java.lang.Override
+    public boolean hasUid() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>required string uid = 2;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          uid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string uid = 2;</code>
+     * @return The bytes for uid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JSON_FIELD_NUMBER = 3;
+    private volatile java.lang.Object json_;
+    /**
+     * <code>required string json = 3;</code>
+     * @return Whether the json field is set.
+     */
+    @java.lang.Override
+    public boolean hasJson() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>required string json = 3;</code>
+     * @return The json.
+     */
+    @java.lang.Override
+    public java.lang.String getJson() {
+      java.lang.Object ref = json_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          json_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string json = 3;</code>
+     * @return The bytes for json.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJsonBytes() {
+      java.lang.Object ref = json_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        json_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasSeq()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasJson()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeUInt32(1, seq_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uid_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, json_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, seq_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uid_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, json_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat)) {
+        return super.equals(obj);
+      }
+      org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat other = (org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat) obj;
+
+      if (hasSeq() != other.hasSeq()) return false;
+      if (hasSeq()) {
+        if (getSeq()
+            != other.getSeq()) return false;
+      }
+      if (hasUid() != other.hasUid()) return false;
+      if (hasUid()) {
+        if (!getUid()
+            .equals(other.getUid())) return false;
+      }
+      if (hasJson() != other.hasJson()) return false;
+      if (hasJson()) {
+        if (!getJson()
+            .equals(other.getJson())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSeq()) {
+        hash = (37 * hash) + SEQ_FIELD_NUMBER;
+        hash = (53 * hash) + getSeq();
+      }
+      if (hasUid()) {
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUid().hashCode();
+      }
+      if (hasJson()) {
+        hash = (37 * hash) + JSON_FIELD_NUMBER;
+        hash = (53 * hash) + getJson().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * Protobuf type {@code MessageHeartBeat}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:MessageHeartBeat)
+        org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.cloudxue.im.common.bean.msg.ProtoMsg.internal_static_MessageHeartBeat_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.cloudxue.im.common.bean.msg.ProtoMsg.internal_static_MessageHeartBeat_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.class, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder.class);
+      }
+
+      // Construct using org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        seq_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        uid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        json_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.cloudxue.im.common.bean.msg.ProtoMsg.internal_static_MessageHeartBeat_descriptor;
+      }
+
+      @java.lang.Override
+      public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat getDefaultInstanceForType() {
+        return org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat build() {
+        org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat buildPartial() {
+        org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat result = new org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.seq_ = seq_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.uid_ = uid_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.json_ = json_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat) {
+          return mergeFrom((org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat other) {
+        if (other == org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance()) return this;
+        if (other.hasSeq()) {
+          setSeq(other.getSeq());
+        }
+        if (other.hasUid()) {
+          bitField0_ |= 0x00000002;
+          uid_ = other.uid_;
+          onChanged();
+        }
+        if (other.hasJson()) {
+          bitField0_ |= 0x00000004;
+          json_ = other.json_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasSeq()) {
+          return false;
+        }
+        if (!hasUid()) {
+          return false;
+        }
+        if (!hasJson()) {
+          return false;
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int seq_ ;
+      /**
+       * <code>required uint32 seq = 1;</code>
+       * @return Whether the seq field is set.
+       */
+      @java.lang.Override
+      public boolean hasSeq() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required uint32 seq = 1;</code>
+       * @return The seq.
+       */
+      @java.lang.Override
+      public int getSeq() {
+        return seq_;
+      }
+      /**
+       * <code>required uint32 seq = 1;</code>
+       * @param value The seq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSeq(int value) {
+        bitField0_ |= 0x00000001;
+        seq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 seq = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSeq() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        seq_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object uid_ = "";
+      /**
+       * <code>required string uid = 2;</code>
+       * @return Whether the uid field is set.
+       */
+      public boolean hasUid() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>required string uid = 2;</code>
+       * @return The uid.
+       */
+      public java.lang.String getUid() {
+        java.lang.Object ref = uid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            uid_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string uid = 2;</code>
+       * @return The bytes for uid.
+       */
+      public com.google.protobuf.ByteString
+          getUidBytes() {
+        java.lang.Object ref = uid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string uid = 2;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string uid = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        uid_ = getDefaultInstance().getUid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string uid = 2;</code>
+       * @param value The bytes for uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object json_ = "";
+      /**
+       * <code>required string json = 3;</code>
+       * @return Whether the json field is set.
+       */
+      public boolean hasJson() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>required string json = 3;</code>
+       * @return The json.
+       */
+      public java.lang.String getJson() {
+        java.lang.Object ref = json_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            json_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string json = 3;</code>
+       * @return The bytes for json.
+       */
+      public com.google.protobuf.ByteString
+          getJsonBytes() {
+        java.lang.Object ref = json_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          json_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string json = 3;</code>
+       * @param value The json to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        json_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string json = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJson() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        json_ = getDefaultInstance().getJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string json = 3;</code>
+       * @param value The bytes for json to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        json_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:MessageHeartBeat)
+    }
+
+    // @@protoc_insertion_point(class_scope:MessageHeartBeat)
+    private static final org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat();
+    }
+
+    public static org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MessageHeartBeat>
+        PARSER = new com.google.protobuf.AbstractParser<MessageHeartBeat>() {
+      @java.lang.Override
+      public MessageHeartBeat parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MessageHeartBeat(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MessageHeartBeat> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MessageHeartBeat> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Message)
       com.google.protobuf.MessageOrBuilder {
@@ -7175,19 +8091,58 @@ public final class ProtoMsg {
     org.cloudxue.im.common.bean.msg.ProtoMsg.MessageResponseOrBuilder getMessageResponseOrBuilder();
 
     /**
+     * <pre>
+     *系统通知
+     * </pre>
+     *
      * <code>optional .MessageNotification notification = 8;</code>
      * @return Whether the notification field is set.
      */
     boolean hasNotification();
     /**
+     * <pre>
+     *系统通知
+     * </pre>
+     *
      * <code>optional .MessageNotification notification = 8;</code>
      * @return The notification.
      */
     org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification getNotification();
     /**
+     * <pre>
+     *系统通知
+     * </pre>
+     *
      * <code>optional .MessageNotification notification = 8;</code>
      */
     org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotificationOrBuilder getNotificationOrBuilder();
+
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+     * @return Whether the heartBeat field is set.
+     */
+    boolean hasHeartBeat();
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+     * @return The heartBeat.
+     */
+    org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat getHeartBeat();
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+     */
+    org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder getHeartBeatOrBuilder();
   }
   /**
    * <pre>
@@ -7328,6 +8283,19 @@ public final class ProtoMsg {
                 notification_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000080;
+              break;
+            }
+            case 74: {
+              org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000100) != 0)) {
+                subBuilder = heartBeat_.toBuilder();
+              }
+              heartBeat_ = input.readMessage(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(heartBeat_);
+                heartBeat_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
               break;
             }
             default: {
@@ -7556,6 +8524,10 @@ public final class ProtoMsg {
     public static final int NOTIFICATION_FIELD_NUMBER = 8;
     private org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification notification_;
     /**
+     * <pre>
+     *系统通知
+     * </pre>
+     *
      * <code>optional .MessageNotification notification = 8;</code>
      * @return Whether the notification field is set.
      */
@@ -7564,6 +8536,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
+     * <pre>
+     *系统通知
+     * </pre>
+     *
      * <code>optional .MessageNotification notification = 8;</code>
      * @return The notification.
      */
@@ -7572,11 +8548,53 @@ public final class ProtoMsg {
       return notification_ == null ? org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification.getDefaultInstance() : notification_;
     }
     /**
+     * <pre>
+     *系统通知
+     * </pre>
+     *
      * <code>optional .MessageNotification notification = 8;</code>
      */
     @java.lang.Override
     public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotificationOrBuilder getNotificationOrBuilder() {
       return notification_ == null ? org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification.getDefaultInstance() : notification_;
+    }
+
+    public static final int HEARTBEAT_FIELD_NUMBER = 9;
+    private org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat heartBeat_;
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+     * @return Whether the heartBeat field is set.
+     */
+    @java.lang.Override
+    public boolean hasHeartBeat() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+     * @return The heartBeat.
+     */
+    @java.lang.Override
+    public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat getHeartBeat() {
+      return heartBeat_ == null ? org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance() : heartBeat_;
+    }
+    /**
+     * <pre>
+     *心跳
+     * </pre>
+     *
+     * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+     */
+    @java.lang.Override
+    public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder getHeartBeatOrBuilder() {
+      return heartBeat_ == null ? org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance() : heartBeat_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7628,6 +8646,12 @@ public final class ProtoMsg {
           return false;
         }
       }
+      if (hasHeartBeat()) {
+        if (!getHeartBeat().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -7658,6 +8682,9 @@ public final class ProtoMsg {
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         output.writeMessage(8, getNotification());
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        output.writeMessage(9, getHeartBeat());
       }
       unknownFields.writeTo(output);
     }
@@ -7698,6 +8725,10 @@ public final class ProtoMsg {
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getNotification());
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getHeartBeat());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7753,6 +8784,11 @@ public final class ProtoMsg {
         if (!getNotification()
             .equals(other.getNotification())) return false;
       }
+      if (hasHeartBeat() != other.hasHeartBeat()) return false;
+      if (hasHeartBeat()) {
+        if (!getHeartBeat()
+            .equals(other.getHeartBeat())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7796,6 +8832,10 @@ public final class ProtoMsg {
       if (hasNotification()) {
         hash = (37 * hash) + NOTIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getNotification().hashCode();
+      }
+      if (hasHeartBeat()) {
+        hash = (37 * hash) + HEARTBEAT_FIELD_NUMBER;
+        hash = (53 * hash) + getHeartBeat().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7935,6 +8975,7 @@ public final class ProtoMsg {
           getMessageRequestFieldBuilder();
           getMessageResponseFieldBuilder();
           getNotificationFieldBuilder();
+          getHeartBeatFieldBuilder();
         }
       }
       @java.lang.Override
@@ -7976,6 +9017,12 @@ public final class ProtoMsg {
           notificationBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
+        if (heartBeatBuilder_ == null) {
+          heartBeat_ = null;
+        } else {
+          heartBeatBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -8056,6 +9103,14 @@ public final class ProtoMsg {
           }
           to_bitField0_ |= 0x00000080;
         }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          if (heartBeatBuilder_ == null) {
+            result.heartBeat_ = heartBeat_;
+          } else {
+            result.heartBeat_ = heartBeatBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000100;
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -8131,6 +9186,9 @@ public final class ProtoMsg {
         if (other.hasNotification()) {
           mergeNotification(other.getNotification());
         }
+        if (other.hasHeartBeat()) {
+          mergeHeartBeat(other.getHeartBeat());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8169,6 +9227,11 @@ public final class ProtoMsg {
         }
         if (hasNotification()) {
           if (!getNotification().isInitialized()) {
+            return false;
+          }
+        }
+        if (hasHeartBeat()) {
+          if (!getHeartBeat().isInitialized()) {
             return false;
           }
         }
@@ -8845,6 +9908,10 @@ public final class ProtoMsg {
       private com.google.protobuf.SingleFieldBuilderV3<
           org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification.Builder, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotificationOrBuilder> notificationBuilder_;
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        * @return Whether the notification field is set.
        */
@@ -8852,6 +9919,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        * @return The notification.
        */
@@ -8863,6 +9934,10 @@ public final class ProtoMsg {
         }
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       public Builder setNotification(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification value) {
@@ -8879,6 +9954,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       public Builder setNotification(
@@ -8893,6 +9972,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       public Builder mergeNotification(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification value) {
@@ -8913,6 +9996,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       public Builder clearNotification() {
@@ -8926,6 +10013,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotification.Builder getNotificationBuilder() {
@@ -8934,6 +10025,10 @@ public final class ProtoMsg {
         return getNotificationFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageNotificationOrBuilder getNotificationOrBuilder() {
@@ -8945,6 +10040,10 @@ public final class ProtoMsg {
         }
       }
       /**
+       * <pre>
+       *系统通知
+       * </pre>
+       *
        * <code>optional .MessageNotification notification = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8959,6 +10058,162 @@ public final class ProtoMsg {
           notification_ = null;
         }
         return notificationBuilder_;
+      }
+
+      private org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat heartBeat_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder> heartBeatBuilder_;
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       * @return Whether the heartBeat field is set.
+       */
+      public boolean hasHeartBeat() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       * @return The heartBeat.
+       */
+      public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat getHeartBeat() {
+        if (heartBeatBuilder_ == null) {
+          return heartBeat_ == null ? org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance() : heartBeat_;
+        } else {
+          return heartBeatBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      public Builder setHeartBeat(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat value) {
+        if (heartBeatBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          heartBeat_ = value;
+          onChanged();
+        } else {
+          heartBeatBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      public Builder setHeartBeat(
+          org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder builderForValue) {
+        if (heartBeatBuilder_ == null) {
+          heartBeat_ = builderForValue.build();
+          onChanged();
+        } else {
+          heartBeatBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      public Builder mergeHeartBeat(org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat value) {
+        if (heartBeatBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0) &&
+              heartBeat_ != null &&
+              heartBeat_ != org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance()) {
+            heartBeat_ =
+              org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.newBuilder(heartBeat_).mergeFrom(value).buildPartial();
+          } else {
+            heartBeat_ = value;
+          }
+          onChanged();
+        } else {
+          heartBeatBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      public Builder clearHeartBeat() {
+        if (heartBeatBuilder_ == null) {
+          heartBeat_ = null;
+          onChanged();
+        } else {
+          heartBeatBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder getHeartBeatBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return getHeartBeatFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      public org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder getHeartBeatOrBuilder() {
+        if (heartBeatBuilder_ != null) {
+          return heartBeatBuilder_.getMessageOrBuilder();
+        } else {
+          return heartBeat_ == null ?
+              org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.getDefaultInstance() : heartBeat_;
+        }
+      }
+      /**
+       * <pre>
+       *心跳
+       * </pre>
+       *
+       * <code>optional .MessageHeartBeat heartBeat = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder> 
+          getHeartBeatFieldBuilder() {
+        if (heartBeatBuilder_ == null) {
+          heartBeatBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeat.Builder, org.cloudxue.im.common.bean.msg.ProtoMsg.MessageHeartBeatOrBuilder>(
+                  getHeartBeat(),
+                  getParentForChildren(),
+                  isClean());
+          heartBeat_ = null;
+        }
+        return heartBeatBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9039,6 +10294,11 @@ public final class ProtoMsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_MessageNotification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MessageHeartBeat_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MessageHeartBeat_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Message_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9066,20 +10326,23 @@ public final class ProtoMsg {
       "expose\030\004 \002(\r\022\022\n\nlast_block\030\005 \002(\010\022\023\n\013bloc" +
       "k_index\030\006 \002(\007\"X\n\023MessageNotification\022\020\n\010" +
       "msg_type\030\001 \002(\r\022\016\n\006sender\030\002 \002(\014\022\014\n\004json\030\003" +
-      " \002(\t\022\021\n\ttimestamp\030\004 \002(\t\"\224\002\n\007Message\022\027\n\004t" +
-      "ype\030\001 \002(\0162\t.HeadType\022\020\n\010sequence\030\002 \002(\004\022\022" +
-      "\n\nsession_id\030\003 \002(\t\022#\n\014loginRequest\030\004 \001(\013" +
-      "2\r.LoginRequest\022%\n\rloginResponse\030\005 \001(\0132\016" +
-      ".LoginResponse\022\'\n\016messageRequest\030\006 \001(\0132\017" +
-      ".MessageRequest\022)\n\017messageResponse\030\007 \001(\013" +
-      "2\020.MessageResponse\022*\n\014notification\030\010 \001(\013" +
-      "2\024.MessageNotification*\316\001\n\010HeadType\022\021\n\rL" +
-      "OGIN_REQUEST\020\001\022\022\n\016LOGIN_RESPONSE\020\002\022\022\n\016LO" +
-      "GOUT_REQUEST\020\003\022\023\n\017LOGOUT_RESPONSE\020\004\022\025\n\021K" +
-      "EEPALIVE_REQUEST\020\005\022\026\n\022KEEPALIVE_RESPONSE" +
-      "\020\006\022\023\n\017MESSAGE_REQUEST\020\007\022\024\n\020MESSAGE_RESPO" +
-      "NSE\020\010\022\030\n\024MESSAGE_NOTIFICATION\020\tB+\n\037org.c" +
-      "loudxue.im.common.bean.msgB\010ProtoMsg"
+      " \002(\t\022\021\n\ttimestamp\030\004 \002(\t\":\n\020MessageHeartB" +
+      "eat\022\013\n\003seq\030\001 \002(\r\022\013\n\003uid\030\002 \002(\t\022\014\n\004json\030\003 " +
+      "\002(\t\"\272\002\n\007Message\022\027\n\004type\030\001 \002(\0162\t.HeadType" +
+      "\022\020\n\010sequence\030\002 \002(\004\022\022\n\nsession_id\030\003 \002(\t\022#" +
+      "\n\014loginRequest\030\004 \001(\0132\r.LoginRequest\022%\n\rl" +
+      "oginResponse\030\005 \001(\0132\016.LoginResponse\022\'\n\016me" +
+      "ssageRequest\030\006 \001(\0132\017.MessageRequest\022)\n\017m" +
+      "essageResponse\030\007 \001(\0132\020.MessageResponse\022*" +
+      "\n\014notification\030\010 \001(\0132\024.MessageNotificati" +
+      "on\022$\n\theartBeat\030\t \001(\0132\021.MessageHeartBeat" +
+      "*\316\001\n\010HeadType\022\021\n\rLOGIN_REQUEST\020\001\022\022\n\016LOGI" +
+      "N_RESPONSE\020\002\022\022\n\016LOGOUT_REQUEST\020\003\022\023\n\017LOGO" +
+      "UT_RESPONSE\020\004\022\025\n\021KEEPALIVE_REQUEST\020\005\022\026\n\022" +
+      "KEEPALIVE_RESPONSE\020\006\022\023\n\017MESSAGE_REQUEST\020" +
+      "\007\022\024\n\020MESSAGE_RESPONSE\020\010\022\030\n\024MESSAGE_NOTIF" +
+      "ICATION\020\tB+\n\037org.cloudxue.im.common.bean" +
+      ".msgB\010ProtoMsg"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9115,12 +10378,18 @@ public final class ProtoMsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MessageNotification_descriptor,
         new java.lang.String[] { "MsgType", "Sender", "Json", "Timestamp", });
-    internal_static_Message_descriptor =
+    internal_static_MessageHeartBeat_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_MessageHeartBeat_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MessageHeartBeat_descriptor,
+        new java.lang.String[] { "Seq", "Uid", "Json", });
+    internal_static_Message_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Message_descriptor,
-        new java.lang.String[] { "Type", "Sequence", "SessionId", "LoginRequest", "LoginResponse", "MessageRequest", "MessageResponse", "Notification", });
+        new java.lang.String[] { "Type", "Sequence", "SessionId", "LoginRequest", "LoginResponse", "MessageRequest", "MessageResponse", "Notification", "HeartBeat", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
