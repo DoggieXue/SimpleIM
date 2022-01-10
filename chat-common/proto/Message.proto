@@ -1,3 +1,4 @@
+syntax = "proto2";
 //定义protobuf的包名空间
 option java_package = "org.cloudxue.im.common.bean.msg";
 //消息体名称
