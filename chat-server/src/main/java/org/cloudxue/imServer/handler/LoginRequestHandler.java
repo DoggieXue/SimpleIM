@@ -68,9 +68,8 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
             @Override
             public void onBack(Boolean r) {
                 if (r) {
-                    //TODO: 添加聊天处理器和心跳处理器
                     ctx.pipeline().addAfter("login", "chat", chatRedirectHandler);
-
+                    ctx.pipeline().addAfter("chat", "heartBeat", new HeartBeatServerHandler());
                     ctx.pipeline().remove("login");
                     log.info("登录成功： " + session.getUser());
                 } else {
