@@ -223,7 +223,7 @@ public class ThreadUtil {
     }
 
     /**
-     * 获取执行混合型任务的线程池     *
+     * 获取执行混合型任务的线程池
      *
      * @return
      */

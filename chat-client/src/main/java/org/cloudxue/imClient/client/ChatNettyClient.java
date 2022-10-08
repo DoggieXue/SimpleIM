@@ -51,15 +51,27 @@ public class ChatNettyClient {
 
     private boolean initFlag = true;
     private User user;
-    private GenericFutureListener<ChannelFuture> connectedListener;
 
+    /**
+     * 连接异步监听
+     */
+    private GenericFutureListener<ChannelFuture> connectedListener;
+    /**
+     * Netty客户端启动器
+     */
     private Bootstrap bootstrap;
+    /**
+     * Netty客户端事件循环组
+     */
     private EventLoopGroup g;
 
     public ChatNettyClient () {
         g = new NioEventLoopGroup();
     }
 
+    /**
+     * 启动客户端
+     */
     public void doConnect() {
         try {
             bootstrap = new Bootstrap();

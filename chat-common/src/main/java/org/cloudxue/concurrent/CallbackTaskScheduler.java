@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 
 /**
  * @ClassName CallbackTaskScheduler
- * @Description 辅助类：提交执行有回调的任务
+ * @Description 异步任务调度器辅助类：提交执行有回调的任务
  * @Author xuexiao
  * @Date 2021/12/22 下午3:05
  * @Version 1.0

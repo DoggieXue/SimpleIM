@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @ClassName LoginSender
- * @Description 请描述类的业务用途
+ * @Description 负责将组装好的Protobuf登录数据包发送到服务器端
  * @Author xuexiao
  * @Date 2021/12/24 上午10:18
  * @Version 1.0

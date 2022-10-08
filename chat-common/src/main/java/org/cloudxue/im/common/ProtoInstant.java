@@ -43,14 +43,17 @@ public class ProtoInstant {
         /**
          * 其他未知
          */
-        public static final int UNKNOW = 6;
+        public static final int UNKNOWN = 6;
     }
 
+    /**
+     * Protobuf通信响应结果枚举
+     */
     public enum ResultCodeEnum {
         SUCCESS(0, "交易成功"),
         AUTH_FAILED(1, "登录失败"),
         NO_TOKEN(2, "没有授权码"),
-        UNKNOW_ERROR(3, "未知错误"),
+        UNKNOWN_ERROR(3, "未知错误"),
         ;
         private Integer code;
         private String desc;

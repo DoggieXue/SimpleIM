@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  * @ClassName LoginConsoleCommand
- * @Description 请描述类的业务用途
+ * @Description 登录命令的信息收集类，用于收集用户名和密码
  * @Author xuexiao
  * @Date 2021/12/23 下午9:37
  * @Version 1.0

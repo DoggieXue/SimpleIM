@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @ClassName LoginResponseHandler
- * @Description 请描述类的业务用途
+ * @Description 负责处理登录响应
  * @Author xuexiao
  * @Date 2021/12/23 下午9:55
  * @Version 1.0
@@ -44,14 +44,12 @@ public class LoginResponseHandler extends ChannelInboundHandlerAdapter {
             //登录失败
             log.info(result.getDesc());
         } else {
-            //登录成功
+            //登录成功：为ClientSession设置服务端返回的sessionID
             ClientSession.loginSuccess(ctx, pkg);
             ChannelPipeline p = ctx.pipeline();
             p.remove(this);
-
             //在编码器后面，动态插入心跳处理器
-            //TODO:
-
+            p.addAfter("encoder","heartbeat", new HeartBeatClientHandler());
         }
     }
 }

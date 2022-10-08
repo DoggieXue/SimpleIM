@@ -12,10 +12,17 @@
     <artifactId>chat-common</artifactId>
 
     <dependencies>
+        <!-- protobuf的Java运行环境 -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>17.0</version>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
         </dependency>
     </dependencies>
     <build>
@@ -31,6 +38,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven继承的Protobuf插件，可以通过Maven生成POJO和Builder-->
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>

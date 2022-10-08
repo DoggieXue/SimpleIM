@@ -51,7 +51,6 @@ public class ClientSession {
      * @param pkg
      */
     public static void loginSuccess (ChannelHandlerContext ctx, ProtoMsg.Message pkg) {
-        Channel channel = ctx.channel();
         ClientSession session = getSession(ctx);
         session.setSessionId(pkg.getSessionId());
         session.setLogin(true);

@@ -4865,38 +4865,66 @@ public final class ProtoMsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+     * </pre>
+     *
      * <code>required bool result = 1;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+     * </pre>
+     *
      * <code>required bool result = 1;</code>
      * @return The result.
      */
     boolean getResult();
 
     /**
+     * <pre>
+     *应答码
+     * </pre>
+     *
      * <code>required uint32 code = 2;</code>
      * @return Whether the code field is set.
      */
     boolean hasCode();
     /**
+     * <pre>
+     *应答码
+     * </pre>
+     *
      * <code>required uint32 code = 2;</code>
      * @return The code.
      */
     int getCode();
 
     /**
+     * <pre>
+     *应答消息
+     * </pre>
+     *
      * <code>required string info = 3;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
+     * <pre>
+     *应答消息
+     * </pre>
+     *
      * <code>required string info = 3;</code>
      * @return The info.
      */
     java.lang.String getInfo();
     /**
+     * <pre>
+     *应答消息
+     * </pre>
+     *
      * <code>required string info = 3;</code>
      * @return The bytes for info.
      */
@@ -4904,33 +4932,57 @@ public final class ProtoMsg {
         getInfoBytes();
 
     /**
+     * <pre>
+     *错误描述是否给用户提示：1：提示；0：不提示
+     * </pre>
+     *
      * <code>required uint32 expose = 4;</code>
      * @return Whether the expose field is set.
      */
     boolean hasExpose();
     /**
+     * <pre>
+     *错误描述是否给用户提示：1：提示；0：不提示
+     * </pre>
+     *
      * <code>required uint32 expose = 4;</code>
      * @return The expose.
      */
     int getExpose();
 
     /**
+     * <pre>
+     *是否为最后的响应
+     * </pre>
+     *
      * <code>required bool last_block = 5;</code>
      * @return Whether the lastBlock field is set.
      */
     boolean hasLastBlock();
     /**
+     * <pre>
+     *是否为最后的响应
+     * </pre>
+     *
      * <code>required bool last_block = 5;</code>
      * @return The lastBlock.
      */
     boolean getLastBlock();
 
     /**
+     * <pre>
+     *应答序号
+     * </pre>
+     *
      * <code>required fixed32 block_index = 6;</code>
      * @return Whether the blockIndex field is set.
      */
     boolean hasBlockIndex();
     /**
+     * <pre>
+     *应答序号
+     * </pre>
+     *
      * <code>required fixed32 block_index = 6;</code>
      * @return The blockIndex.
      */
@@ -5054,6 +5106,10 @@ public final class ProtoMsg {
     public static final int RESULT_FIELD_NUMBER = 1;
     private boolean result_;
     /**
+     * <pre>
+     *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+     * </pre>
+     *
      * <code>required bool result = 1;</code>
      * @return Whether the result field is set.
      */
@@ -5062,6 +5118,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+     * </pre>
+     *
      * <code>required bool result = 1;</code>
      * @return The result.
      */
@@ -5073,6 +5133,10 @@ public final class ProtoMsg {
     public static final int CODE_FIELD_NUMBER = 2;
     private int code_;
     /**
+     * <pre>
+     *应答码
+     * </pre>
+     *
      * <code>required uint32 code = 2;</code>
      * @return Whether the code field is set.
      */
@@ -5081,6 +5145,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
+     * <pre>
+     *应答码
+     * </pre>
+     *
      * <code>required uint32 code = 2;</code>
      * @return The code.
      */
@@ -5092,6 +5160,10 @@ public final class ProtoMsg {
     public static final int INFO_FIELD_NUMBER = 3;
     private volatile java.lang.Object info_;
     /**
+     * <pre>
+     *应答消息
+     * </pre>
+     *
      * <code>required string info = 3;</code>
      * @return Whether the info field is set.
      */
@@ -5100,6 +5172,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
+     * <pre>
+     *应答消息
+     * </pre>
+     *
      * <code>required string info = 3;</code>
      * @return The info.
      */
@@ -5119,6 +5195,10 @@ public final class ProtoMsg {
       }
     }
     /**
+     * <pre>
+     *应答消息
+     * </pre>
+     *
      * <code>required string info = 3;</code>
      * @return The bytes for info.
      */
@@ -5140,6 +5220,10 @@ public final class ProtoMsg {
     public static final int EXPOSE_FIELD_NUMBER = 4;
     private int expose_;
     /**
+     * <pre>
+     *错误描述是否给用户提示：1：提示；0：不提示
+     * </pre>
+     *
      * <code>required uint32 expose = 4;</code>
      * @return Whether the expose field is set.
      */
@@ -5148,6 +5232,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
+     * <pre>
+     *错误描述是否给用户提示：1：提示；0：不提示
+     * </pre>
+     *
      * <code>required uint32 expose = 4;</code>
      * @return The expose.
      */
@@ -5159,6 +5247,10 @@ public final class ProtoMsg {
     public static final int LAST_BLOCK_FIELD_NUMBER = 5;
     private boolean lastBlock_;
     /**
+     * <pre>
+     *是否为最后的响应
+     * </pre>
+     *
      * <code>required bool last_block = 5;</code>
      * @return Whether the lastBlock field is set.
      */
@@ -5167,6 +5259,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
+     * <pre>
+     *是否为最后的响应
+     * </pre>
+     *
      * <code>required bool last_block = 5;</code>
      * @return The lastBlock.
      */
@@ -5178,6 +5274,10 @@ public final class ProtoMsg {
     public static final int BLOCK_INDEX_FIELD_NUMBER = 6;
     private int blockIndex_;
     /**
+     * <pre>
+     *应答序号
+     * </pre>
+     *
      * <code>required fixed32 block_index = 6;</code>
      * @return Whether the blockIndex field is set.
      */
@@ -5186,6 +5286,10 @@ public final class ProtoMsg {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
+     * <pre>
+     *应答序号
+     * </pre>
+     *
      * <code>required fixed32 block_index = 6;</code>
      * @return The blockIndex.
      */
@@ -5684,6 +5788,10 @@ public final class ProtoMsg {
 
       private boolean result_ ;
       /**
+       * <pre>
+       *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+       * </pre>
+       *
        * <code>required bool result = 1;</code>
        * @return Whether the result field is set.
        */
@@ -5692,6 +5800,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
+       * <pre>
+       *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+       * </pre>
+       *
        * <code>required bool result = 1;</code>
        * @return The result.
        */
@@ -5700,6 +5812,10 @@ public final class ProtoMsg {
         return result_;
       }
       /**
+       * <pre>
+       *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+       * </pre>
+       *
        * <code>required bool result = 1;</code>
        * @param value The result to set.
        * @return This builder for chaining.
@@ -5711,6 +5827,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+       * </pre>
+       *
        * <code>required bool result = 1;</code>
        * @return This builder for chaining.
        */
@@ -5723,6 +5843,10 @@ public final class ProtoMsg {
 
       private int code_ ;
       /**
+       * <pre>
+       *应答码
+       * </pre>
+       *
        * <code>required uint32 code = 2;</code>
        * @return Whether the code field is set.
        */
@@ -5731,6 +5855,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
+       * <pre>
+       *应答码
+       * </pre>
+       *
        * <code>required uint32 code = 2;</code>
        * @return The code.
        */
@@ -5739,6 +5867,10 @@ public final class ProtoMsg {
         return code_;
       }
       /**
+       * <pre>
+       *应答码
+       * </pre>
+       *
        * <code>required uint32 code = 2;</code>
        * @param value The code to set.
        * @return This builder for chaining.
@@ -5750,6 +5882,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *应答码
+       * </pre>
+       *
        * <code>required uint32 code = 2;</code>
        * @return This builder for chaining.
        */
@@ -5762,6 +5898,10 @@ public final class ProtoMsg {
 
       private java.lang.Object info_ = "";
       /**
+       * <pre>
+       *应答消息
+       * </pre>
+       *
        * <code>required string info = 3;</code>
        * @return Whether the info field is set.
        */
@@ -5769,6 +5909,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
+       * <pre>
+       *应答消息
+       * </pre>
+       *
        * <code>required string info = 3;</code>
        * @return The info.
        */
@@ -5787,6 +5931,10 @@ public final class ProtoMsg {
         }
       }
       /**
+       * <pre>
+       *应答消息
+       * </pre>
+       *
        * <code>required string info = 3;</code>
        * @return The bytes for info.
        */
@@ -5804,6 +5952,10 @@ public final class ProtoMsg {
         }
       }
       /**
+       * <pre>
+       *应答消息
+       * </pre>
+       *
        * <code>required string info = 3;</code>
        * @param value The info to set.
        * @return This builder for chaining.
@@ -5819,6 +5971,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *应答消息
+       * </pre>
+       *
        * <code>required string info = 3;</code>
        * @return This builder for chaining.
        */
@@ -5829,6 +5985,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *应答消息
+       * </pre>
+       *
        * <code>required string info = 3;</code>
        * @param value The bytes for info to set.
        * @return This builder for chaining.
@@ -5846,6 +6006,10 @@ public final class ProtoMsg {
 
       private int expose_ ;
       /**
+       * <pre>
+       *错误描述是否给用户提示：1：提示；0：不提示
+       * </pre>
+       *
        * <code>required uint32 expose = 4;</code>
        * @return Whether the expose field is set.
        */
@@ -5854,6 +6018,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
+       * <pre>
+       *错误描述是否给用户提示：1：提示；0：不提示
+       * </pre>
+       *
        * <code>required uint32 expose = 4;</code>
        * @return The expose.
        */
@@ -5862,6 +6030,10 @@ public final class ProtoMsg {
         return expose_;
       }
       /**
+       * <pre>
+       *错误描述是否给用户提示：1：提示；0：不提示
+       * </pre>
+       *
        * <code>required uint32 expose = 4;</code>
        * @param value The expose to set.
        * @return This builder for chaining.
@@ -5873,6 +6045,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *错误描述是否给用户提示：1：提示；0：不提示
+       * </pre>
+       *
        * <code>required uint32 expose = 4;</code>
        * @return This builder for chaining.
        */
@@ -5885,6 +6061,10 @@ public final class ProtoMsg {
 
       private boolean lastBlock_ ;
       /**
+       * <pre>
+       *是否为最后的响应
+       * </pre>
+       *
        * <code>required bool last_block = 5;</code>
        * @return Whether the lastBlock field is set.
        */
@@ -5893,6 +6073,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
+       * <pre>
+       *是否为最后的响应
+       * </pre>
+       *
        * <code>required bool last_block = 5;</code>
        * @return The lastBlock.
        */
@@ -5901,6 +6085,10 @@ public final class ProtoMsg {
         return lastBlock_;
       }
       /**
+       * <pre>
+       *是否为最后的响应
+       * </pre>
+       *
        * <code>required bool last_block = 5;</code>
        * @param value The lastBlock to set.
        * @return This builder for chaining.
@@ -5912,6 +6100,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *是否为最后的响应
+       * </pre>
+       *
        * <code>required bool last_block = 5;</code>
        * @return This builder for chaining.
        */
@@ -5924,6 +6116,10 @@ public final class ProtoMsg {
 
       private int blockIndex_ ;
       /**
+       * <pre>
+       *应答序号
+       * </pre>
+       *
        * <code>required fixed32 block_index = 6;</code>
        * @return Whether the blockIndex field is set.
        */
@@ -5932,6 +6128,10 @@ public final class ProtoMsg {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
+       * <pre>
+       *应答序号
+       * </pre>
+       *
        * <code>required fixed32 block_index = 6;</code>
        * @return The blockIndex.
        */
@@ -5940,6 +6140,10 @@ public final class ProtoMsg {
         return blockIndex_;
       }
       /**
+       * <pre>
+       *应答序号
+       * </pre>
+       *
        * <code>required fixed32 block_index = 6;</code>
        * @param value The blockIndex to set.
        * @return This builder for chaining.
@@ -5951,6 +6155,10 @@ public final class ProtoMsg {
         return this;
       }
       /**
+       * <pre>
+       *应答序号
+       * </pre>
+       *
        * <code>required fixed32 block_index = 6;</code>
        * @return This builder for chaining.
        */
@@ -8146,8 +8354,8 @@ public final class ProtoMsg {
   }
   /**
    * <pre>
-   *顶层消息是一中嵌套消息，嵌套了各种类型的消息
-   *逻辑上：根据消息类型，type的值最多只要一个有效
+   *顶层消息是一种嵌套消息，嵌套了各种类型的消息
+   *逻辑上：根据消息类型，type的值最多只有一个有效
    * </pre>
    *
    * Protobuf type {@code Message}
@@ -8934,8 +9142,8 @@ public final class ProtoMsg {
     }
     /**
      * <pre>
-     *顶层消息是一中嵌套消息，嵌套了各种类型的消息
-     *逻辑上：根据消息类型，type的值最多只要一个有效
+     *顶层消息是一种嵌套消息，嵌套了各种类型的消息
+     *逻辑上：根据消息类型，type的值最多只有一个有效
      * </pre>
      *
      * Protobuf type {@code Message}

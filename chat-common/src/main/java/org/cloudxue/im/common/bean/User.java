@@ -22,7 +22,7 @@ public class User {
     String uid = String.valueOf(NO.getAndIncrement());
     String deviceId = UUID.randomUUID().toString();
     String token = UUID.randomUUID().toString();
-    String nickName = "nikeName";
+    String nickName = "nikeName-" + uid;
     PLATTYPE platform = PLATTYPE.MAC;
 
     public enum PLATTYPE {

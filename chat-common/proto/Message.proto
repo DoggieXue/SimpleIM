@@ -48,12 +48,12 @@ message MessageRequest {
 }
 /*聊天响应*/
 message MessageResponse {
-    required bool result = 1;
-    required uint32 code = 2;
-    required string info = 3;
-    required uint32 expose = 4;
-    required bool last_block = 5;
-    required fixed32 block_index = 6;
+    required bool result = 1; //成功标记，用于描述应答是否成功；true:发送成功；false:发送失败
+    required uint32 code = 2;   //应答码
+    required string info = 3;   //应答消息
+    required uint32 expose = 4; //错误描述是否给用户提示：1：提示；0：不提示
+    required bool last_block = 5;       //是否为最后的响应
+    required fixed32 block_index = 6;   //应答序号
 }
 /*通知*/
 message MessageNotification {
@@ -69,8 +69,8 @@ message MessageHeartBeat {
     required string json = 3;
 }
 /*顶层消息*/
-//顶层消息是一中嵌套消息，嵌套了各种类型的消息
-//逻辑上：根据消息类型，type的值最多只要一个有效
+//顶层消息是一种嵌套消息，嵌套了各种类型的消息
+//逻辑上：根据消息类型，type的值最多只有一个有效
 message Message {
     required HeadType type = 1;
     required uint64 sequence = 2;

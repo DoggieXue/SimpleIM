@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @ClassName LoginRequestHandler
  * @Description 服务端登录处理器
  *              1、登录消息校验：非空校验、消息类型校验
- *              2、创建Session
+ *              2、创建服务端Session
  *              3、提交登录业务异步处理任务
  * @Author xuexiao
  * @Date 2021/12/22 下午2:31
@@ -40,7 +40,7 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         // 1、登录消息校验
-        if (null == msg || !(msg instanceof ProtoMsg.Message)) {
+        if(null == msg || !(msg instanceof ProtoMsg.Message)) {
             super.channelRead(ctx, msg);
             return;
         }
@@ -48,15 +48,15 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
         ProtoMsg.Message pkg = (ProtoMsg.Message) msg;
         //获取请求类型
         ProtoMsg.HeadType headType = pkg.getType();
-        if (!headType.equals(loginProcessor.type())) {
+        if(!headType.equals(ProtoMsg.HeadType.LOGIN_REQUEST)) {
             super.channelRead(ctx, msg);
             return;
         }
 
-        //2、创建客户端Session
+        //2、创建服务端Session
         ServerSession session = new ServerSession(ctx.channel());
 
-        //3、使用独立的、异步的业务线程 来处理登录时的校验逻辑
+        //3、使用独立的、异步的、有返回的业务线程 来处理登录时的校验逻辑
         CallbackTaskScheduler.add(new CallBackTask<Boolean>() {
 
             @Override

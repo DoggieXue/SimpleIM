@@ -42,10 +42,11 @@ public abstract class BaseSender {
 
     public void sendMsg(ProtoMsg.Message message) {
         if (null == getSession() || !isConnected()) {
-            log.info("未连接成功!");
+            log.info("未连接成功，请稍后再试！");
             return;
         }
         Channel channel = getSession().getChannel();
+        //会立即返回一个ChannelFuture异步任务实例，但真正的TCP写入的操作还没有执行
         ChannelFuture f = channel.writeAndFlush(message);
         f.addListener(new GenericFutureListener<Future<? super Void>>() {
             @Override

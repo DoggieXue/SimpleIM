@@ -8,13 +8,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.cloudxue.im.common.ProtoInstant;
 import org.cloudxue.im.common.bean.msg.ProtoMsg;
 import org.cloudxue.im.common.exception.InvalidFrameException;
-import org.cloudxue.util.Logger;
 
 import java.util.List;
 
 /**
  * @ClassName SimpleProtobufDecoder
- * @Description 请描述类的业务用途
+ * @Description 自定义Protobuf解码器
+ *              Head-Content协议的数据包结构：魔数(short)|版本(short)|长度(short)-Content
  * @Author xuexiao
  * @Date 2021/12/21 上午10:15
  * @Version 1.0
@@ -35,8 +35,8 @@ public class SimpleProtobufDecoder extends ByteToMessageDecoder
     public static Object decode0(ChannelHandlerContext ctx, ByteBuf in) throws InvalidFrameException, InvalidProtocolBufferException {
         //标记一下当前的readerIndex的位置
         in.markReaderIndex();
-        //判断包头长度
-        if (in.readableBytes() < 8) {
+        //判断包头长度  编码时，写入的长度使用了short类型表示
+        if (in.readableBytes() < 2) {
             return null;
         }
         //读取魔数
@@ -52,7 +52,8 @@ public class SimpleProtobufDecoder extends ByteToMessageDecoder
             throw new InvalidFrameException(error);
         }
         //读取传送过来的消息长度
-        int length = in.readInt();
+//        int length = in.readInt();//此处与编码时写入长度的方法用的数据类型对应out.writShort(length);
+        int length = in.readShort();
         //如果长度小于0：数据非法，关闭连接
         if (length < 0) {
             ctx.close();
@@ -68,14 +69,13 @@ public class SimpleProtobufDecoder extends ByteToMessageDecoder
             //堆缓存
             ByteBuf slice = in.slice(in.readerIndex(), length);
             array = slice.array();
-//            array = new byte[length];
-//            in.readBytes(array, 0, length);
         } else {
+            //直接缓冲区
             array = new byte[length];
             in.readBytes(array, 0, length);
         }
 
-        //字节转换成对象
+        //字节转换成Protobuf的POJO对象
         ProtoMsg.Message outMsg = ProtoMsg.Message.parseFrom(array);
 
         return outMsg;

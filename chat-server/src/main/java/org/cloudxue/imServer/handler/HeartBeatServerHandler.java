@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName HeartBeatServerHandler
- * @Description 请描述类的业务用途
+ * @Description 心跳检测处理器
  * @Author xuexiao
  * @Date 2022/1/10 上午11:28
  * @Version 1.0
@@ -45,6 +45,8 @@ public class HeartBeatServerHandler extends IdleStateHandler {
                 }
             });
         }
+        //没有此处的调用，IdleStateHandler的空闲检测会无效
+        super.channelRead(ctx, msg);
     }
 
     @Override

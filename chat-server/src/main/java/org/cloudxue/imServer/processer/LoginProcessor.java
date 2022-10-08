@@ -76,7 +76,7 @@ public class LoginProcessor implements ServerProcessor{
             return false;
         }
         //校验用户：比较耗时的操作，需要100 ms以上的时间
-        //比如1：调用远程用户resuful校验服务
+        //比如1：调用远程用户RESTful校验服务
         //比如2：调用数据库接口校验
         return true;
     }

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName HeartBeatClientHandler
- * @Description 请描述类的业务用途
+ * @Description 心跳检测数据包发送处理器
  * @Author xuexiao
  * @Date 2022/1/9 下午10:19
  * @Version 1.0
@@ -32,7 +32,7 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
      * @throws Exception
      */
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         ClientSession session = ClientSession.getSession(ctx);
         User user = session.getUser();
         HeartBeatMsgConverter builder = new HeartBeatMsgConverter(ProtoMsg.HeadType.KEEPALIVE_REQUEST, session, user);
@@ -46,12 +46,15 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
      * @param heartBeatMsg
      */
     public void heartBeat(ChannelHandlerContext ctx, ProtoMsg.Message heartBeatMsg) {
-        ctx.executor().schedule(new Runnable() {
-            @Override
-            public void run() {
+        //提交一个一次性的定时任务
+        ctx.executor().schedule(() -> {
+            if (ctx.channel().isActive()) {
                 log.info("发送 HEART_BEAT 消息 to server" );
+                ctx.writeAndFlush(heartBeatMsg);
+                //递归调用：提交下一个一次性的定时任务,发送下一次心跳报文
                 heartBeat(ctx, heartBeatMsg);
             }
+
         }, HEARTBEAT_INTERVAL, TimeUnit.SECONDS);
     }
 
@@ -75,6 +78,5 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
         } else {
             super.channelRead(ctx, msg);
         }
-
     }
 }

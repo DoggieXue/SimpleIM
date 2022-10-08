@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @ClassName LogoutConsoleCommand
- * @Description 请描述类的业务用途
+ * @Description 退出命令的信息收集类
  * @Author xuexiao
  * @Date 2021/12/23 下午9:41
  * @Version 1.0

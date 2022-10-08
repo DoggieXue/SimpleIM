@@ -23,7 +23,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName CommandController
- * @Description 请描述类的业务用途
+ * @Description 代表了整个客户端，收集各种类型的命令及内容，组装成POJO对象，
+ *              然后调用对应的消息发送器向服务器
  * @Author xuexiao
  * @Date 2021/12/24 上午11:23
  * @Version 1.0
@@ -70,7 +71,7 @@ public class CommandController {
     private User user;
 
     /**
-     * 客户端与服务端断开监听器
+     * 客户端与服务端断开【异步】监听器
      */
     GenericFutureListener<ChannelFuture> closeListener = (ChannelFuture f) -> {
         log.info(new Date() + ":  连接已经断开...");
@@ -84,7 +85,7 @@ public class CommandController {
     };
 
     /**
-     * 客户端连接服务端监听器
+     * 客户端连接服务端【异步】监听器
      */
     GenericFutureListener<ChannelFuture> connectedListener = (ChannelFuture f) -> {
         final EventLoop eventLoop = f.channel().eventLoop();

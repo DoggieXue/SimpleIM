@@ -1,7 +1,7 @@
 package org.cloudxue.concurrent;
 
 /**
- * 异步任务执行
+ * 有回调处理的异步任务执行
  * @param <R>
  */
 public interface CallBackTask<R> {
